@@ -3,6 +3,9 @@
 ### ✅ Phase 1: Installing
 
 - [✅] installing all needed [laravel,inertia,react]
+- [✅] understanding tailwind css diff than bootstrap
+- [✅] tailwind @container queries
+- [✅] Routes using Inertia
 
 
 
@@ -51,3 +54,19 @@
 }
 
 - Note use two terminal by using php artisan serve and npm run dev
+
+# Day 2
+- using @container in tailwind it is useful in the dashboard widgets
+- it is based on the parent container when the container width will drop into 768px which is md: you can set their it will be hidden
+- but if you don't use the @ sign or container queries it will base only in the screen size not on the container width or size
+- note before you can use this container queries first you put in the tailwind.config.js in the core plugins to set the container:true
+
+
+## Note !
+# Tailwind Css
+- by using tailwind css the layout is not the same in bootstrap
+- tailwind use mobile first to desktop layout
+- example flex flex-col the flex-col is default for all screen size unless i add another like md:flex-row
+it means when the screen is in larger size like desktop it will display the content in a row
+- tailwind css the md: breakpoints start from the 768px to up while the bootstrap the md: from 768px to lower
+- You can pass props from routes into your components using return Inertia::render('uri:',[props:])

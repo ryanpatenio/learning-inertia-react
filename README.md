@@ -68,6 +68,8 @@
 - by using link of inertia js you will only loaded the specific component not entire dom
 - using Scroll position
 - if you want to preserve your scroll position you only add in the link an attribute [preserveScroll] 
+- * progress indicator
+- you can customize the progress indicator color in you app.jsx and you can also add a spinner
 
 
 ## Note !

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@inertiajs/react'
 
 const Contact = () => {
   return (
@@ -17,6 +18,7 @@ const Contact = () => {
         ← Drag the blue border to resize the container. 
         Layout changes at 768px container width (not screen width).
         </p>
+        <Link preserveScroll href="/Contact" className="text-2xl">{new Date().toLocaleTimeString()}</Link>
     </div>
     </>
   )

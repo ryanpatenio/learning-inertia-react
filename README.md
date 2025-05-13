@@ -66,6 +66,8 @@
 - using Layout & link by inertia js
 - by using layout Home.layout = page => <RootLayout children={page} /> you can select diff layout by manually adding it in every components you are free to select wether it is for admin or client side
 - by using link of inertia js you will only loaded the specific component not entire dom
+- using Scroll position
+- if you want to preserve your scroll position you only add in the link an attribute [preserveScroll] 
 
 
 ## Note !

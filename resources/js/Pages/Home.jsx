@@ -1,4 +1,6 @@
 
+import RootLayout from "../Layouts/RootLayout"
+
 const Home = ({name}) => {
   return (
     <div className="min-h-screen grid place-items-center ">
@@ -19,4 +21,6 @@ const Home = ({name}) => {
   )
 }
 
-export default Home
+Home.layout = page => <RootLayout children={page} />
+
+export default Home;

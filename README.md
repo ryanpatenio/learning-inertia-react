@@ -57,9 +57,17 @@
 
 # Day 2
 - using @container in tailwind it is useful in the dashboard widgets
-- it is based on the parent container when the container width will drop into 768px which is md: you can set their it will be hidden
+- it is based on the parent container when the container width will drop into 768px which is md: you can set their then it will be hidden
 - but if you don't use the @ sign or container queries it will base only in the screen size not on the container width or size
 - note before you can use this container queries first you put in the tailwind.config.js in the core plugins to set the container:true
+- You can pass props from routes into your components using return Inertia::render('uri:',[props:])
+
+# Day 3
+- using Layout & link by inertia js
+- by using layout Home.layout = page => <RootLayout children={page} /> you can select diff layout by manually adding it in every components you are free to select wether it is for admin or client side
+- by using link of inertia js you will only loaded the specific component not entire dom
+- using Scroll position
+- if you want to preserve your scroll position you only add in the link an attribute [preserveScroll] 
 
 
 ## Note !
@@ -69,4 +77,4 @@
 - example flex flex-col the flex-col is default for all screen size unless i add another like md:flex-row
 it means when the screen is in larger size like desktop it will display the content in a row
 - tailwind css the md: breakpoints start from the 768px to up while the bootstrap the md: from 768px to lower
-- You can pass props from routes into your components using return Inertia::render('uri:',[props:])
+- 

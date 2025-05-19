@@ -12,7 +12,7 @@ const rootLayout = ({children}) => {
         setIsOpen(false);
       }
     }
-    console.log('useFetc')
+    console.log('useFetch')
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -62,7 +62,7 @@ const rootLayout = ({children}) => {
                       <Link href="/" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</Link>
                       <Link href="/About" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</Link>
                       <Link href="/Contact" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</Link>
-                      <Link href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</Link>
+                      <Link href="/Posts" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Posts</Link>
                     </div>
                   </div>
                 </div>

@@ -39,7 +39,7 @@ class PostController extends Controller
       
         Post::create($fields);
         
-        return redirect('/Posts');
+        return redirect('/Posts')->with('message','New post created successfully!');
     }
 
     /**
@@ -55,7 +55,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return Inertia::render('Posts/update',['post' => $post]);
     }
 
     /**
@@ -63,7 +63,19 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+
+        $fields = $request->validate([
+           'title' => 'required|string',
+            'body'  => 'required'
+        ]);
+
+        $post->update($fields);
+        
+        return redirect('/Posts')->with([
+            'message' => 'The post was updated successfully!',
+            'type' => 'success'
+        ]);
+        
     }
 
     /**
@@ -72,6 +84,9 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect('/Posts')->with('message','The Post was Deleted!');
+        return redirect('/Posts')->with([
+            'message' => 'The post was deleted successfully!',
+            'type' => 'error'
+        ]);
     }
 }

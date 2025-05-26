@@ -1,6 +1,7 @@
 import RootLayout from "@/Layouts/RootLayout"
 import { Link, useForm, usePage } from "@inertiajs/react"
 import { useEffect, useState } from "react";
+import FlashMessage from "../../Components/FlashMsg";
 
 
 const Post = ({posts}) => {
@@ -9,18 +10,20 @@ const Post = ({posts}) => {
     const { flash } = usePage().props;
     const [flashMsg, setFlashMsg] = useState(null);
   
-    useEffect(() => {
-        if(flash.message){
-            setFlashMsg(flash.message);
-            console.log("mounting");
+   useEffect(() => {
+        if (flash.message) {
+            setFlashMsg({
+                message: flash.message,
+                type: flash.type || "success"
+            });
+
             const timer = setTimeout(() => {
                 setFlashMsg(null);
-                console.log('cleaning')
-            },3000);
-        return () => clearTimeout(timer);
-        }
+            }, 3000);
 
-    },[flash]);
+            return () => clearTimeout(timer);
+        }
+    }, [flash]);
    
     const handleDelete = (id) => {
         if(confirm("Are you sure you want to delete this post?")){
@@ -37,11 +40,7 @@ const Post = ({posts}) => {
                 <h2 className="font-bold text-xl mb-2">Posts</h2>
             </div>
 
-            { flashMsg && 
-                <div className="absolute top-24  right-8 shadow-lg bg-green-300 px-8 rounded-md  py-4  font-semi-bold">
-                    <span>{flashMsg}</span>
-                </div>
-            }
+            <FlashMessage message={flashMsg?.message} type={flashMsg?.type} />
 
             <div className="mt-5 flex items-center flex-start">
                 <Link
@@ -77,6 +76,13 @@ const Post = ({posts}) => {
                                 </button>
 
                             </form>
+                            <Link
+                                href={`/posts/${post.id}/edit`}
+                                className="bg-green-500 shadow-lg px-3 py-1 font-semibold text-white rounded-md cursor-pointer hover:bg-green-400"
+                                
+                                >
+                                Edit
+                            </Link>
                             <Link
                                 href={`/posts/${post.id}`}
                                 className="bg-indigo-500 shadow-lg px-3 py-1 font-semibold text-white rounded-md cursor-pointer hover:bg-indigo-400"

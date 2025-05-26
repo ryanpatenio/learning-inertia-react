@@ -71,6 +71,10 @@
 - * progress indicator
 - you can customize the progress indicator color in you app.jsx and you can also add a spinner
 
+# Day 4
+- update resources it just like create resource of laravel, the diff only in the FE you must change the useForm the post method into put then it will go through
+- i make the render flash message a component then then i use default type of message with colors
+- i modified the handleInertiaRequest the share flash message and i add a type of it
 
 ## Note !
 # Tailwind Css
